@@ -1,10 +1,19 @@
-# PhoenixTest
+# セットアップ手順ログ
 
 ```
 brew update
 brew install elixir
 mix archive.install https://github.com/phoenixframework/phoenix/releases/download/v1.0.1/phoenix_new-1.0.1.ez
 ```
+
+```
+mix phoenix.new phoenix_test
+cd phoenix_test/
+mix deps.get
+heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+```
+
+# PhoenixTest
 
 ```
 We are all set! Run your Phoenix application:
