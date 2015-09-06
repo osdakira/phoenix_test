@@ -11,6 +11,9 @@ mix phoenix.new phoenix_test
 cd phoenix_test/
 mix deps.get
 heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+vi elixir_buildpack.config
+echo 'web: mix phoenix.server' > Procfile
+heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
 ```
 
 # PhoenixTest

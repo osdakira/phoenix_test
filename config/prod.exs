@@ -58,4 +58,14 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
+
+config :phoenix_test, PhoenixTest.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+config :phoenix_test, PhoenixTest.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "phoenix_test_prod",
+  pool_size: 20
